@@ -1,0 +1,96 @@
+---
+title: "Lesson 0"
+output: html_document
+---
+
+Before getting started programming in R, you will have to download some things. First you will want
+to download the actual R programming language. If you are going to be using a Windows machine, then you will
+want to download R from [this link](http://cran.r-project.org/bin/windows/base/). For a Mac you will be
+downloading form [here](http://cran.r-project.org/bin/macosx/). If you are on a Linux machine, you will have to choose the package suited for your particular distribution. In many cases this is easier than Mac/Windows
+install because it just means downloading R from the command line. The cran website provides some nice
+instructions for this [here](http://cran.us.r-project.org/bin/linux/). Just follow the folders to your
+distribution. If your's is not included here, just do a simple google search "install R <your distribution>".
+This works just as well if you substitute your distribution with Mac or Windows as well. As websites go, the
+[cran website](http://cran.us.r-project.org/) is pretty good, so feel free to rumage around there for
+some additional resources.
+
+Once you download that, you will be taken through an installation process. Once that has completed, you
+will have the full functionality of R at your disposal. At this point we could perform any conceivable R
+task that we like. However, there is a really nice Integrated Development Environment (IDE) which provides
+some convenient tools which makes R programming feel more fluid than the base R interactive prompt. To
+download this, go to [this link](http://www.rstudio.com/products/rstudio/download/). Choose the link for
+your operating system and go through a very similar installation process. RStudio will also verify that R has
+already been propoerly installed, so if it does not see your R install you might need to repeat the steps from
+the previous paragraph.
+
+Once RStudio has been installed (and perhaps you have restarted your system), go ahead and open the
+application. You will be greeted by three Windows. This might look something like this.
+
+<img src="http://i.imgur.com/vnZADmY.png" alt="RStudio Picture">
+
+On the lefthand side, you will probably have just one window instead of two. Your window is the console.
+Its role is to listen to anything you say line by line and execute it on the fly. It is just as if you have
+an assitant that will promply perform any command that you may have. As you do this, you will be gathering
+data and putting labels on that data. These labels will show up in the upper right hand corner as you
+receive results from your console assistant. The lower right corner is simply a representation of the folders
+in your primary drive.
+
+Sometimes quick commands are not robust enough for what we want to do, so instead of telling our assitant to
+do interactively, we would like to write down a laundry list of steps on what to do to solve our problem, only
+retrieving the data we actually care about. This is what the upper left window is for which is present on my
+screen, but not on yours. As you might have noticed, it can also be used to create these lessons! Be warned
+though. The console assistant will do whatever you say EXACTLY as you say it. It does not understand the
+context with which you are solving the problem. It also is strict on syntax. If you do not include a quote
+where there should be a quote, your assitant will complain and stop executing.
+
+Before we get to the real part of the course, we will install an interactive lesson tool called Swirl.
+To do this type the following in order, pressing enter between lines.
+
+```{r, eval=FALSE}
+install.packages("swirl")
+library("swirl")
+```
+
+The first line downloads the swirl package and the second line takes those functions in the swirl package
+and makes them available for your own use. This is sort of analagous to buing a book and then opening it.
+
+Now that this is done, to run swirl, simply type:
+
+```{r, eval=FALSE}
+swirl()
+```
+
+At this point swirl will introduce itself to you and give you a brief demonstration on what you can do with
+it. It will probably come pre-loaded with some sample courses. Take a peek around and come back when you
+have familiarized yourself.
+
+Now that this is done we are going to want to download the TA_Training course. Luckily this is very easy
+with this command:
+
+```{r, eval=FALSE}
+install_course_github("erikgaas", "TA_Training")
+```
+
+Once this is done you can enter swirl again, just as you did before, and notice that TA_Training has been
+added to your course list and there are lessons displaed within that course.
+
+One more tricky thing. More lessons will be added or revised over time, so the course will need to be
+updated intermitently. To do this is not as simple as downloading it again. You must uninstall the course
+and then download it again like so:
+
+```{r, eval=FALSE}
+uninstall_course("TA_Training")
+install_course_github("erikgaas", "TA_Training")
+```
+
+It would be good practice to run this entire section of code every time you open R Studio to keep things
+up to date:
+
+```{r, eval=FALSE}
+library("swirl")
+uninstall_course("TA_Training")
+install_course_github("erikgaas", "TA_Training")
+```
+
+Now that your R environment is all setup, we can get into some of the real lessons to learn how it
+actually works.
